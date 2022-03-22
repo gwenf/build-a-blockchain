@@ -6,8 +6,9 @@ class Block:
 
     number = itertools.count()
 
-    def __init__(self):
+    def __init__(self, prev_block_hash):
         self.number = next(Block.number)
+        self.prev_block_hash = prev_block_hash
         self.transactions = []
 
     def add_transaction(self, tx):

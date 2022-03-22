@@ -10,3 +10,8 @@
 
 1. Create Blocks from Transactions
 1. Append Blocks to a "Chain" (list)
+
+## Step 3 &mdash; Enforce Integrity with Cryptography
+
+1. Hash each block
+1. Reference each block's hash in its subsequent block
