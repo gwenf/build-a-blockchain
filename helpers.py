@@ -9,11 +9,8 @@ def generate_address() -> str:
 
     https://en.bitcoin.it/wiki/Base58Check_encoding
     """
-    omit_chars = ('0', 'O', 'I', 'l')  # invalid address characters
-    chars = [
-        c for c in ascii_letters + digits
-        if c not in omit_chars
-    ]
+    omit_chars = ("0", "O", "I", "l")  # invalid address characters
+    chars = [c for c in ascii_letters + digits if c not in omit_chars]
     # randomly choose 26-35 characters as the address
     address = []
     for _ in range(random.randint(26, 35)):
@@ -26,8 +23,4 @@ def generate_transaction() -> Transaction:
     to_ = generate_address()
     from_ = generate_address()
     amount = random.randint(1, 10)  # random amount for now
-    return Transaction(
-        to_=to_,
-        from_=from_,
-        amount=amount
-    )
+    return Transaction(to_=to_, from_=from_, amount=amount)

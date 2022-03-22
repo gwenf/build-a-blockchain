@@ -1,9 +1,14 @@
+import itertools
+
+
 class Block:
     """A basic Block."""
 
+    number = itertools.count()
+
     def __init__(self):
-        self.sequence = 0  # genesis block
-        self.transactions = []  # transaction ledger
+        self.number = next(Block.number)
+        self.transactions = []
 
     def add_transaction(self, tx):
         """Adds a transaction to the block's ledger."""
